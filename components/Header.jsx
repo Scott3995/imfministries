@@ -74,15 +74,15 @@ export const Header = () => {
   <div className="leading-tight">
     <div className="font-extrabold text-white text-sm sm:text-base">I.M.F</div>
 
-    {/* Small screens: short */}
-    <div className="text-white/85 text-[0.68rem] font-semibold sm:hidden">
-    International Ministries of Fellowship With God
-    </div>
+    <div className="text-white drop-shadow-sm text-[0.68rem] font-semibold sm:hidden">
+  International Ministries of Fellowship With God
+</div>
 
-    {/* >= sm screens: full */}
-    <div className="hidden sm:block text-white/85 text-[0.7rem] sm:text-xs font-semibold">
-      International Ministries of Fellowship With God
-    </div>
+{/* >= sm screens: full */}
+<div className="hidden sm:block text-white drop-shadow-sm text-[0.7rem] sm:text-xs font-semibold">
+  International Ministries of Fellowship With God
+</div>
+
   </div>
 </Link>
 

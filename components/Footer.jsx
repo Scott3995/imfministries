@@ -19,20 +19,24 @@ export const Footer = () => {
               <div className="relative w-14 h-14">
                 <Image src={logo} alt="IMF Logo" fill className="object-contain" />
               </div>
+
               <div className="leading-tight">
-                <h2 className="text-white font-extrabold text-lg">
+                <h2 className="text-white drop-shadow-sm font-extrabold text-lg">
                   International Ministries of Fellowship With God
                 </h2>
-                <p className="text-white/80 text-sm">
-                  Restoring Nations back to Christ · <span className="text-[#D9A441] font-semibold">Obadiah 1:17</span>
-                </p>
+                <p className="mt-1 text-white drop-shadow-sm text-xs sm:text-sm leading-snug break-words">
+  Restoring Nations back to Christ ·{' '}
+  <span className="text-[#D9A441] font-semibold whitespace-nowrap">Obadiah 1:17</span>
+</p>
+
               </div>
             </div>
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur">
               <span className="w-2 h-2 rounded-full bg-[#D9A441]" />
-              <p className="text-white/90 text-sm font-semibold">
-			  But upon mount Zion shall be deliverance, and there shall be holiness; and the house of Jacob shall possess their possessions
+              <p className="text-white drop-shadow-sm text-sm font-semibold">
+                But upon mount Zion shall be deliverance, and there shall be holiness; and
+                the house of Jacob shall possess their possessions
               </p>
             </div>
           </div>
@@ -48,15 +52,15 @@ export const Footer = () => {
               <div className="flex flex-col space-y-3 uppercase">
                 {[
                   { label: 'Home', href: '/#home' },
-                  { label: 'Events', href: 'events' },
-                  { label: 'Gallery', href: 'gallery' },
+                  { label: 'Events', href: '/events' },
+                  { label: 'Gallery', href: '/gallery' },
                   { label: 'About', href: '/#about' },
                   { label: 'Contact', href: '/#contact' },
                 ].map((l) => (
                   <Link
                     key={l.label}
                     href={l.href}
-                    className="text-white/85 hover:text-white font-semibold tracking-wide relative w-fit
+                    className="text-white drop-shadow-sm hover:text-white font-semibold tracking-wide relative w-fit
                                after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
                                after:bg-[#D9A441] hover:after:w-full after:transition-all after:duration-300"
                   >
@@ -76,7 +80,7 @@ export const Footer = () => {
                 {['Privacy Policy', 'Cookie Policy', 'Terms and Conditions'].map((p) => (
                   <button
                     key={p}
-                    className="text-left text-white/85 hover:text-white font-semibold tracking-wide relative w-fit
+                    className="text-left text-white drop-shadow-sm hover:text-white font-semibold tracking-wide relative w-fit
                                after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
                                after:bg-[#1E40FF] hover:after:w-full after:transition-all after:duration-300"
                   >
@@ -120,8 +124,9 @@ export const Footer = () => {
                   Send
                 </button>
 
-                <p className="text-white/70 text-xs">
-                  By sending, you agree to our <span className="text-[#D9A441] font-semibold">privacy policy</span>.
+                <p className="text-white drop-shadow-sm text-xs">
+                  By sending, you agree to our{' '}
+                  <span className="text-[#D9A441] font-semibold">privacy policy</span>.
                 </p>
               </div>
             </div>
@@ -129,11 +134,11 @@ export const Footer = () => {
 
           {/* Bottom bar */}
           <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-white/75 text-sm">
+            <p className="text-white drop-shadow-sm text-sm">
               © {new Date().getFullYear()} IMF Church. All rights reserved.
             </p>
 
-            <div className="flex items-center gap-2 text-white/80 text-sm">
+            <div className="flex items-center gap-2 text-white drop-shadow-sm text-sm">
               <span className="font-semibold">Follow:</span>
               <span className="text-[#D9A441]">Facebook</span>
               <span className="text-white/30">•</span>
