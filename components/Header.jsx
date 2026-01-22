@@ -61,70 +61,73 @@ export const Header = () => {
       <div className="absolute top-0 w-full z-30">
         <div className="backdrop-blur-md bg-[#b100aa]/30 border-b border-white/10">
           <nav
-            className={`relative flex items-center lg:max-w-5xl md:max-w-3xl mx-auto py-4 px-5 ${
+            className={`lg:max-w-5xl md:max-w-3xl mx-auto py-4 px-5 ${
               active ? 'bg-[#b100aa]/70' : ''
             }`}
           >
-            {/* LEFT: Logo + Name */}
-            <Link href="/#home" className="flex items-center gap-3 z-30">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
-                <Image
-                  src={logo}
-                  alt="IMF Logo"
-                  fill
-                  className="object-contain drop-shadow"
-                  priority
-                />
-              </div>
-
-              <div className="leading-snug">
-                <div className="font-extrabold text-white text-sm sm:text-base">I.M.F</div>
-
-                <div className="text-white drop-shadow-sm text-[0.68rem] font-semibold sm:hidden">
-                  International Ministries of Fellowship With God
+            {/* Mobile: 2 columns (brand | menu icon)
+                Desktop: 3 columns (brand | centered links | CTA) */}
+            <div className="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr] items-center">
+              {/* LEFT: Logo + Name */}
+              <Link href="/#home" className="flex items-center gap-3 justify-self-start z-30">
+                <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+                  <Image
+                    src={logo}
+                    alt="IMF Logo"
+                    fill
+                    className="object-contain drop-shadow"
+                    priority
+                  />
                 </div>
 
-                {/* >= sm screens: full */}
-                <div className="hidden sm:block text-white drop-shadow-sm text-[0.7rem] sm:text-xs font-semibold">
-                  International Ministries of Fellowship With God
+                <div className="leading-snug">
+                  <div className="font-extrabold text-white text-sm sm:text-base">I.M.F</div>
+
+                  <div className="text-white drop-shadow-sm text-[0.68rem] font-semibold sm:hidden">
+                    International Ministries of Fellowship With God
+                  </div>
+
+                  <div className="hidden sm:block text-white drop-shadow-sm text-[0.7rem] sm:text-xs font-semibold">
+                    International Ministries of Fellowship With God
+                  </div>
                 </div>
+              </Link>
+
+              {/* CENTER: Desktop links (centered) */}
+              <div className="hidden md:flex items-center gap-8 justify-self-center">
+                <Link href="/#home" className={`${navLinkClass} ${navLinkUnderline}`}>
+                  Home
+                </Link>
+                <Link href="/events" className={`${navLinkClass} ${navLinkUnderline}`}>
+                  Events
+                </Link>
+                <Link href="/gallery" className={`${navLinkClass} ${navLinkUnderline}`}>
+                  Gallery
+                </Link>
+                <Link href="/#contact" className={`${navLinkClass} ${navLinkUnderline}`}>
+                  Contact
+                </Link>
               </div>
-            </Link>
 
-            {/* CENTER: Desktop links (centered) */}
-            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-8">
-              <Link href="/#home" className={`${navLinkClass} ${navLinkUnderline}`}>
-                Home
-              </Link>
-              <Link href="/events" className={`${navLinkClass} ${navLinkUnderline}`}>
-                Events
-              </Link>
-              <Link href="/gallery" className={`${navLinkClass} ${navLinkUnderline}`}>
-                Gallery
-              </Link>
-              <Link href="/#contact" className={`${navLinkClass} ${navLinkUnderline}`}>
-                Contact
-              </Link>
-            </div>
+              {/* RIGHT: CTA (desktop) + hamburger (mobile) */}
+              <div className="justify-self-end flex items-center gap-3 z-30">
+                <Link
+                  href="/#contact"
+                  className="hidden md:inline-flex px-4 py-2 rounded-full font-bold text-sm
+                             bg-[#1E40FF] hover:bg-[#1632cc] text-white
+                             shadow-lg shadow-black/20 border border-white/10 transition"
+                >
+                  Visit Us
+                </Link>
 
-            {/* RIGHT: CTA (desktop) + hamburger (mobile) */}
-            <div className="ml-auto flex items-center gap-3 z-30">
-              <Link
-                href="/#contact"
-                className="hidden md:inline-flex ml-2 px-4 py-2 rounded-full font-bold text-sm
-                           bg-[#1E40FF] hover:bg-[#1632cc] text-white
-                           shadow-lg shadow-black/20 border border-white/10 transition"
-              >
-                Visit Us
-              </Link>
-
-              {/* Mobile icon */}
-              <div className="md:hidden text-white">
-                {!active ? (
-                  <RiMenu4Line onClick={() => setActive(true)} className="w-8 h-8" />
-                ) : (
-                  <TfiClose onClick={() => setActive(false)} className="w-5 h-5" />
-                )}
+                {/* Mobile icon */}
+                <div className="md:hidden text-white">
+                  {!active ? (
+                    <RiMenu4Line onClick={() => setActive(true)} className="w-8 h-8" />
+                  ) : (
+                    <TfiClose onClick={() => setActive(false)} className="w-5 h-5" />
+                  )}
+                </div>
               </div>
             </div>
           </nav>
@@ -142,6 +145,7 @@ export const Header = () => {
             <h2 className="drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)]">
               Upon mount Zion shall be deliverance, and there shall be holines.
             </h2>
+
             <h2 className="hidden md:block drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)]">
               The house of Jacob shall possess their possessions.
             </h2>
