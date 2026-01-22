@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btns {
+	@apply text-amber-500
+		active:scale-90 active:text-black sm:active:text-amber-500 
+		hover:text-[#ffff] 
+		transition duration-300 ease-out;
+}
+
+.navlinks {
+	@apply text-[#fff]
+		active:scale-90 active:text-black sm:active:text-amber-500 
+		hover:text-amber-400
+		transition duration-300 ease-out;
+}
+
+.btnse {
+	@apply text-[#fff]
+		active:scale-90 active:text-black sm:active:text-amber-500 
+		hover:text-amber-500
+		transition duration-300 ease-out;
+}
+
+.arrows {
+	@apply text-amber-500
+		active:scale-90 active:text-black sm:active:text-amber-500 
+		hover:text-[#ffff] 
+		transition duration-300 ease-out
+		disabled:text-gray-500;
+}
+
+.group-date {
+	@apply text-3xl md:text-4xl text-gray-300
+		py-3 uppercase
+		mx-8 md:mx-32
+		font-bold tracking-widest;
+}
+
+.timeline {
+	@apply border-l-4 border-gray-200
+		mx-7  md:mx-32 py-10 max-w-2xl
+		space-y-14;
+}
+
+.dot {
+	@apply absolute top-0 -left-3.5 
+	bg-amber-400 
+	h-6 w-6
+	rounded-full
+	border-4 border-white;
+}
+
+.timeline-date {
+	@apply text-xs font-bold uppercase
+	opacity-40 tracking-widest;
+}
+
+.timeline-title {
+	@apply text-xl md:text-3xl text-gray-600 font-semibold
+	tracking-wide;
+}
+
+.textfield {
+	@apply p-2 rounded-md
+		w-60 placeholder:uppercase placeholder:text-sm
+		outline-none active:outline-none;
+}
+
+.sendbtn {
+	@apply p-1 px-4 rounded-md
+		outline-none active:outline-none
+		bg-amber-400 uppercase font-bold
+		text-amber-900 
+		border border-amber-400
+		hover:border-amber-400 hover:bg-inherit hover:text-amber-400
+		active:bg-amber-400 active:text-neutral-800
+		transition-all ease-out duration-300;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
